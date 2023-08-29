@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TPD
+namespace RobotDemo
 {
     public class ThirdPersonCam : MonoBehaviour
     {
@@ -12,9 +12,6 @@ namespace TPD
         private void Update()
         {
             Vector3 viewDirection = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
-            //orientation.forward = viewDirection.normalized;
-
-
         }
     }
 }

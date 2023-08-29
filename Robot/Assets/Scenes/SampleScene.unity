@@ -523,7 +523,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408665367}
-  m_LocalRotation: {x: 0.52573115, y: 0.000000014636623, z: -0.000000009045929, w: 0.85065085}
+  m_LocalRotation: {x: 0.52573115, y: -0.000000014636622, z: 0.00000000904593, w: 0.85065085}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2952,7 +2952,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.52573115, y: 0.000000019362433, z: -0.000000011966642, w: 0.8506507}
+  m_LocalRotation: {x: 0.52573115, y: -0.00000001936243, z: 0.00000001196664, w: 0.8506507}
   m_LocalPosition: {x: 7.45, y: 9.04, z: 18.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3972,7 +3972,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201648206}
-  m_LocalRotation: {x: 0.48562506, y: -0.0000000102468585, z: 0.000000005692426, w: 0.87416726}
+  m_LocalRotation: {x: 0.48562506, y: 0.000000027994925, z: -0.000000015551986, w: 0.87416726}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3996,7 +3996,6 @@ GameObject:
   - component: {fileID: 1203460185}
   - component: {fileID: 1203460186}
   - component: {fileID: 1203460187}
-  - component: {fileID: 1203460188}
   - component: {fileID: 1203460189}
   m_Layer: 0
   m_Name: Player
@@ -4136,6 +4135,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   normalAligmentTime: 0.25
+  kSoftness: 0.05
 --- !u!114 &1203460186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4178,23 +4178,6 @@ MonoBehaviour:
   groundDrag: 3
   raycastExtension: 0.5
   maxSlopeAngle: 40
---- !u!114 &1203460188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203460180}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f4c858b8f541404c8254c1e548214be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInput: {fileID: 1203460183}
-  rb: {fileID: 1203460182}
-  groundChecker: {fileID: 1203460187}
-  jumpForce: 9
-  jumpCooldown: 0.4
 --- !u!114 &1203460189
 MonoBehaviour:
   m_ObjectHideFlags: 0

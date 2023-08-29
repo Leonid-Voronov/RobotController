@@ -1,7 +1,6 @@
-using UnityEditor.Timeline;
 using UnityEngine;
 
-namespace TPD
+namespace RobotDemo
 {
     public class PlayerMover : MonoBehaviour
     {
@@ -23,10 +22,6 @@ namespace TPD
         private float leftTrackForceModifier;
         private float rightTrackForceModifier;
 
-        private void Update()
-        {
-            
-        }
 
         private void FixedUpdate()
         {
@@ -35,19 +30,9 @@ namespace TPD
 
             moveDirection = orientationTransform.forward * input.InputDirection.y;
 
-            /*if (input.InputDirection.x < 0)
-            {
-                leftTrackForceModifier = 0.5f;
-            }
-            else if (input.InputDirection.x > 0)
-            {
-                rightTrackForceModifier = 0.5f;
-            }*/
-
             float currentSpeed = groundChecker.Grounded ? groundMoveSpeed : airMoveSpeed;
             Vector3 directionAlongSurface = surfaceSlider.Project(moveDirection);
 
-            //rb.AddForce(directionAlongSurface.normalized * currentSpeed * forceModifier, ForceMode.Force);
             Vector3 leftWheelForce = directionAlongSurface.normalized * currentSpeed * forceModifier * leftTrackForceModifier;
             Vector3 rightWheelForce = directionAlongSurface.normalized * currentSpeed * forceModifier * rightTrackForceModifier;
 
@@ -55,7 +40,6 @@ namespace TPD
             rb.AddForceAtPosition(rightWheelForce, rightTrackTransform.position, ForceMode.Force);
 
             SpeedControl();
-
         }
 
         private void SpeedControl()

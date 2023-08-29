@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TPD
+namespace RobotDemo
 {
     public class CursorDisabler : MonoBehaviour
     {

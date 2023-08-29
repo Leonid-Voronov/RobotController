@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace TPD
+namespace RobotDemo
 {
     public class PlayerGroundChecker : MonoBehaviour
     {
@@ -14,14 +12,11 @@ namespace TPD
         [SerializeField] private float playerHeight;
         [SerializeField] private float groundDrag;
         [SerializeField] private float raycastExtension;
-        [SerializeField] private float maxSlopeAngle;
         
         private bool grounded;
-        private bool onSlope;
         private Vector3 hitNormal;
         public bool Grounded => grounded;
         public Vector3 HitNormal => hitNormal;
-        
 
         private void FixedUpdate()
         {
@@ -37,8 +32,6 @@ namespace TPD
                 rb.drag = 0;
             }
         }
-
-         
     }
 }
 

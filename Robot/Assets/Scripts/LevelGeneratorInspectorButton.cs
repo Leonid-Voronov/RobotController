@@ -8,8 +8,6 @@ namespace RobotDemo
         private LevelGenerator levelGenerator;
         public void OnButtonClick()
         {
-            Debug.Log("OnButtonClick");
-
             if (levelGenerator == null)
                 levelGenerator = gameObject.GetComponent<LevelGenerator>();
 

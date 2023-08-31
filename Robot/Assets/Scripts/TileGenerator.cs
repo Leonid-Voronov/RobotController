@@ -24,8 +24,9 @@ namespace RobotDemo
 
             float offsetX = - gameObject.transform.position.x;
             float offsetZ = - gameObject.transform.position.z;
-
-            float[,] heightMap = noiseMapGeneration.GenerateNoiseMap(tileDepth, tileWidth, mapScale, offsetX, offsetZ);
+            
+            LevelGenerator levelGenerator = gameObject.transform.parent.parent.GetComponent<LevelGenerator>();
+            float[,] heightMap = noiseMapGeneration.GenerateNoiseMap(tileDepth, tileWidth, mapScale, offsetX, offsetZ, levelGenerator.Waves);
 
             Texture2D tileTexture = BuildTexture(heightMap);
             GetMaterialCopy().mainTexture = tileTexture;

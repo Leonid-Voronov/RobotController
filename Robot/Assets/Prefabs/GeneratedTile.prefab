@@ -136,5 +136,15 @@ MonoBehaviour:
   tileRenderer: {fileID: 5157807821599657373}
   meshFilter: {fileID: 472047743503557364}
   meshCollider: {fileID: 4228077861844722335}
+  waves:
+  - seed: 5613
+    frequency: 1
+    amplitude: 1
+  - seed: 9551
+    frequency: 1
+    amplitude: 1
+  - seed: 6712
+    frequency: 0.25
+    amplitude: 4
   mapScale: 10
-  heightMultiplier: 5
+  heightMultiplier: 10

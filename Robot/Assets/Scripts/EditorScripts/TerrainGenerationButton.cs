@@ -9,7 +9,7 @@ namespace RobotDemo
         public override void OnInspectorGUI()
         {
             LevelGeneratorInspectorButton levelGeneratorButton = (LevelGeneratorInspectorButton)target;
-            if (GUILayout.Button("Regenerate Terrain"))
+            if (GUILayout.Button("Generate Terrain"))
             {
                 levelGeneratorButton.OnButtonClick();
             }

@@ -6,6 +6,7 @@ namespace RobotDemo
     {
         [SerializeField] private GameObject tilePrefab;
         [SerializeField] private int mapWidthInTiles, mapDepthInTiles;
+        [SerializeField] private Wave[] waves;
         private GameObject terrainObject;
 
         private const string generatedTerrainName = "Generated Terrain";
@@ -24,6 +25,7 @@ namespace RobotDemo
                 DestroyTerrainObjects();
 
             terrainObject = GenerateTerrainParentObject();
+            RegenerateSeeds();
 
 
             Vector3 tileSize = tilePrefab.GetComponent<MeshRenderer>().bounds.size;
@@ -64,6 +66,16 @@ namespace RobotDemo
                     Destroy(gameObject.transform.GetChild(0).gameObject);
             #endif
         }
+
+        private void RegenerateSeeds()
+        {
+            foreach (Wave wave in waves)
+            {
+                wave.SetNewSeed(Random.value * 10000);
+            }
+        }
+
+        public Wave[] Waves => waves;
     }
 }
 

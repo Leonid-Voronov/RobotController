@@ -105,8 +105,9 @@ namespace RobotDemo
                 material = tileRenderer.material = materialCopy;                    //Assign the copy to the meshes
             #else
                 //do this in play mode
-                material = GetComponent<MeshRenderer>.material;
+                material = GetComponent<MeshRenderer>().material;
             #endif
+
             return material;
         }
     }

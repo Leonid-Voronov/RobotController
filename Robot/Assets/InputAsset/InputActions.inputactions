@@ -15,13 +15,13 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "057de5fc-6c1a-40e3-86f7-26af9e5e396e",
-                    "expectedControlType": "Button",
+                    "name": "Fly",
+                    "type": "PassThrough",
+                    "id": "8423a352-0aac-4b35-afa7-3c7d0746431e",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -82,12 +82,12 @@
                 },
                 {
                     "name": "",
-                    "id": "bee80339-5d37-4e0a-aec1-5ffd1f628ef7",
+                    "id": "247fd40d-78c4-4039-ae5c-62eb5056ef30",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Jump",
+                    "action": "Fly",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

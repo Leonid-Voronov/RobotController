@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
+#if (UNITY_EDITOR) 
 namespace RobotDemo
 {
     [CustomEditor(typeof(LevelGeneratorInspectorButton)), CanEditMultipleObjects]
@@ -16,4 +17,5 @@ namespace RobotDemo
         }
     }
 }
+#endif
 

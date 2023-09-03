@@ -37,13 +37,13 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Jump"",
-                    ""type"": ""Button"",
-                    ""id"": ""057de5fc-6c1a-40e3-86f7-26af9e5e396e"",
-                    ""expectedControlType"": ""Button"",
+                    ""name"": ""Fly"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""8423a352-0aac-4b35-afa7-3c7d0746431e"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -104,12 +104,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""bee80339-5d37-4e0a-aec1-5ffd1f628ef7"",
+                    ""id"": ""247fd40d-78c4-4039-ae5c-62eb5056ef30"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Jump"",
+                    ""action"": ""Fly"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -121,7 +121,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         // Keyboard&Mouse
         m_KeyboardMouse = asset.FindActionMap("Keyboard&Mouse", throwIfNotFound: true);
         m_KeyboardMouse_Move = m_KeyboardMouse.FindAction("Move", throwIfNotFound: true);
-        m_KeyboardMouse_Jump = m_KeyboardMouse.FindAction("Jump", throwIfNotFound: true);
+        m_KeyboardMouse_Fly = m_KeyboardMouse.FindAction("Fly", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -184,13 +184,13 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_KeyboardMouse;
     private List<IKeyboardMouseActions> m_KeyboardMouseActionsCallbackInterfaces = new List<IKeyboardMouseActions>();
     private readonly InputAction m_KeyboardMouse_Move;
-    private readonly InputAction m_KeyboardMouse_Jump;
+    private readonly InputAction m_KeyboardMouse_Fly;
     public struct KeyboardMouseActions
     {
         private @InputActions m_Wrapper;
         public KeyboardMouseActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_KeyboardMouse_Move;
-        public InputAction @Jump => m_Wrapper.m_KeyboardMouse_Jump;
+        public InputAction @Fly => m_Wrapper.m_KeyboardMouse_Fly;
         public InputActionMap Get() { return m_Wrapper.m_KeyboardMouse; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -203,9 +203,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
-            @Jump.started += instance.OnJump;
-            @Jump.performed += instance.OnJump;
-            @Jump.canceled += instance.OnJump;
+            @Fly.started += instance.OnFly;
+            @Fly.performed += instance.OnFly;
+            @Fly.canceled += instance.OnFly;
         }
 
         private void UnregisterCallbacks(IKeyboardMouseActions instance)
@@ -213,9 +213,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
-            @Jump.started -= instance.OnJump;
-            @Jump.performed -= instance.OnJump;
-            @Jump.canceled -= instance.OnJump;
+            @Fly.started -= instance.OnFly;
+            @Fly.performed -= instance.OnFly;
+            @Fly.canceled -= instance.OnFly;
         }
 
         public void RemoveCallbacks(IKeyboardMouseActions instance)
@@ -236,6 +236,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     public interface IKeyboardMouseActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnJump(InputAction.CallbackContext context);
+        void OnFly(InputAction.CallbackContext context);
     }
 }

@@ -9,6 +9,7 @@ namespace RobotDemo
         [SerializeField] private Input input;
         [SerializeField] private PlayerGroundChecker playerGroundChecker;
         [SerializeField] private Rigidbody rb;
+        [SerializeField] private PlayerFlyingEngine playerFlyingEngine;
 
         [Header("Values")]
         [SerializeField] private float rotationSpeed;
@@ -30,7 +31,8 @@ namespace RobotDemo
             newForward = Vector3.Cross(newUp, left);
             Quaternion newRotation = Quaternion.LookRotation(newForward, newUp);
 
-            rb.MoveRotation(Quaternion.Lerp(playerObjectTransform.rotation, newRotation, kSoftness));
+            if (!playerFlyingEngine.FlyInput)
+                rb.MoveRotation(Quaternion.Lerp(playerObjectTransform.rotation, newRotation, kSoftness));
         }
 
 

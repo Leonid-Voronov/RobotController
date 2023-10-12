@@ -25,7 +25,7 @@ namespace RobotDemo
                 newForward = Vector3.Slerp(playerObjectTransform.forward, forwardRotationDirection.normalized, Time.deltaTime * rotationSpeed);
             }
 
-            Vector3 newUp = playerGroundChecker.Grounded ? playerGroundChecker.HitNormal : Vector3.up;
+            Vector3 newUp = playerGroundChecker.Grounded ? playerGroundChecker.HitNormal : rb.transform.up;
 
             Vector3 left = Vector3.Cross(newForward, newUp);
             newForward = Vector3.Cross(newUp, left);

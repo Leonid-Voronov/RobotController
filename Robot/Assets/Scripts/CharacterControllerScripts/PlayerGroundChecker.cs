@@ -65,12 +65,6 @@ namespace RobotDemo
             if(!rightTrackGrounded)
                 return leftTrackHit.normal;
 
-            /*Vector3 lowestPoint = leftTrackHit.point;
-
-            if (lowestPoint.y > rightTrackHit.point.y)
-                return rightTrackHit.normal;
-            else
-                return leftTrackHit.normal;*/
             return (leftTrackHit.normal + rightTrackHit.normal) * .5f;
         }
     }

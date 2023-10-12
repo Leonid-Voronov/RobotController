@@ -4639,7 +4639,7 @@ MonoBehaviour:
   - seed: 748.4413
     frequency: 1
     amplitude: 1
-  - seed: 7249.9043
+  - seed: 7249.904
     frequency: 0.5
     amplitude: 2
   - seed: 3301.963
@@ -6046,7 +6046,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1809940553}
-  m_LocalRotation: {x: 0.47229254, y: 0.000000015166425, z: -0.000000008126445, w: 0.8814419}
+  m_LocalRotation: {x: 0.47229254, y: -0.000000015166426, z: 0.000000008126446, w: 0.8814419}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

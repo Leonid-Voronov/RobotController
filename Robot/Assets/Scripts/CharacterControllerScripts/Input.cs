@@ -31,7 +31,16 @@ namespace RobotDemo
 
         private void JetInput(InputAction.CallbackContext context)
         {
+<<<<<<< HEAD
             playerFlyingEngine.ToggleFlyInput();
+=======
+            engineCore.InputResponse();
+        }
+
+        private void NextEngineModeInput (InputAction.CallbackContext context)
+        {
+            //engineCore.ChangeEngineMode();
+>>>>>>> 046d0137 (Tower rotation)
         }
 
         private void OnDisable()

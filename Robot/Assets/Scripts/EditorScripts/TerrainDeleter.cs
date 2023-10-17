@@ -14,6 +14,7 @@ namespace RobotDemo
         
         private static void DeleteTerrain()
         {
+            Debug.Log("Af");
             LevelGenerator levelGenerator = Object.FindFirstObjectByType<LevelGenerator>();
             Object.Destroy(levelGenerator.transform.GetChild(0));
             EditorApplication.quitting -= DeleteTerrain;

@@ -6,7 +6,8 @@ namespace RobotDemo
     public class Input : MonoBehaviour
     {
         [SerializeField] private PlayerInput playerInput;
-        [SerializeField] private PlayerFlyingEngine playerFlyingEngine;
+        [SerializeField] private PlayerVerticalEngine playerVerticalEngine;
+        [SerializeField] private EngineCore engineCore;
         private InputAction moveAction;
 
         private Vector2 inputDirection; 
@@ -31,16 +32,12 @@ namespace RobotDemo
 
         private void JetInput(InputAction.CallbackContext context)
         {
-<<<<<<< HEAD
-            playerFlyingEngine.ToggleFlyInput();
-=======
             engineCore.InputResponse();
         }
 
         private void NextEngineModeInput (InputAction.CallbackContext context)
         {
             //engineCore.ChangeEngineMode();
->>>>>>> 046d0137 (Tower rotation)
         }
 
         private void OnDisable()

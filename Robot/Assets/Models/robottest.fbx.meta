@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 250265c306be380418df3f8e68d57e10
+guid: 17521a5f041edab49a6718e1184a738a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,18 +33,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Cylinder.008|Cube.006Action
-      takeName: Cylinder.008|Cube.006Action
-      internalID: 4597114551691419511
+      name: LeftPath|LeftPath
+      takeName: LeftPath|LeftPath
+      internalID: -6645478558036200500
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 29
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -62,18 +62,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cylinder.008|Cube.006Action.001
-      takeName: Cylinder.008|Cube.006Action.001
-      internalID: -7710732678371678531
+      name: LeftPath|RightPath
+      takeName: LeftPath|RightPath
+      internalID: -8449620814493549283
       firstFrame: 0
-      lastFrame: 30
+      lastFrame: 29
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -91,18 +91,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube.006|Cube.006Action
-      takeName: Cube.006|Cube.006Action
-      internalID: -4081537619849912291
+      name: RightPath|LeftPath
+      takeName: RightPath|LeftPath
+      internalID: -6036967756128897348
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 29
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -120,18 +120,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube.006|Cube.006Action.001
-      takeName: Cube.006|Cube.006Action.001
-      internalID: -695571545634295498
+      name: RightPath|RightPath
+      takeName: RightPath|RightPath
+      internalID: 1578758994171292443
       firstFrame: 0
-      lastFrame: 30
+      lastFrame: 29
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -215,7 +215,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0

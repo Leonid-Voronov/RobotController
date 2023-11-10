@@ -9,6 +9,7 @@ namespace RobotDemo
     {
         static TerrainDeleter()
         {
+            Debug.Log("Initialized");
             EditorApplication.quitting += DeleteTerrain;
         }
         

@@ -12,21 +12,22 @@ namespace RobotDemo
         {
 
             headTransform.rotation = transform.rotation;
-            headTransform.Rotate(-90, 0, 0);
-            headTransform.Rotate(0, 0, 90);
+            //headTransform.Rotate(-90, 0, 0);
+            headTransform.Rotate(0, -90, 0);
 
             if (playerGroundChecker.Grounded)
             {
                 float cameraAngle = Mathf.Atan2(cameraDirection.z, cameraDirection.x) * Mathf.Rad2Deg;
                 float modelAngle = Mathf.Atan2(transform.forward.z, transform.forward.x) * Mathf.Rad2Deg;
                 float deltaAngle = modelAngle - cameraAngle;
-                headTransform.Rotate(0, 0, deltaAngle);
+                headTransform.Rotate(0, deltaAngle, 0);
             }
         }
 
         public void ResetRotation()
         {
             headTransform.localRotation = Quaternion.identity;
+            //headTransform.Rotate(-90, 0, 0);
         }
 
     }

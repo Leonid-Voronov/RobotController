@@ -4,14 +4,14 @@ namespace RobotDemo
 {
     public class TrackAnimator : MonoBehaviour
     {
-        private void Start()
+        [SerializeField] private Animator _animator;
+        [SerializeField] private string leftTrackSpeedParameter;
+        [SerializeField] private string rightTrackSpeedParameter;
+
+        public void AnimateTracks(float newSpeed)
         {
-
-        }
-
-        private void Update()
-        {
-
+            _animator.SetFloat(leftTrackSpeedParameter, newSpeed);
+            _animator.SetFloat(rightTrackSpeedParameter, newSpeed);
         }
     }
 }

@@ -10,6 +10,7 @@ namespace RobotDemo
         [SerializeField] private Rigidbody rb;
         [SerializeField] private PlayerGroundChecker groundChecker;
         [SerializeField] private SurfaceSlider surfaceSlider;
+        [SerializeField] private TrackAnimator trackAnimator;
         [SerializeField] private Transform leftTrackTransform;
         [SerializeField] private Transform rightTrackTransform;
 
@@ -40,6 +41,9 @@ namespace RobotDemo
             rb.AddForceAtPosition(rightWheelForce, rightTrackTransform.position, ForceMode.Force);
 
             SpeedControl();
+
+            float normalizedSpeed = rb.velocity.magnitude / 2;
+            trackAnimator.AnimateTracks(normalizedSpeed);
         }
 
         private void SpeedControl()

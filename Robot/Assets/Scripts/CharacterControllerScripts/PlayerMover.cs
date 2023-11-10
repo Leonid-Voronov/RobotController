@@ -42,8 +42,12 @@ namespace RobotDemo
 
             SpeedControl();
 
-            float normalizedSpeed = rb.velocity.magnitude / 2;
-            trackAnimator.AnimateTracks(normalizedSpeed);
+
+            if (groundChecker.Grounded) 
+            {
+                float normalizedSpeed = rb.velocity.magnitude * Vector3.Dot(rb.velocity, transform.forward) / 6;
+                trackAnimator.AnimateTracks(normalizedSpeed);
+            }
         }
 
         private void SpeedControl()

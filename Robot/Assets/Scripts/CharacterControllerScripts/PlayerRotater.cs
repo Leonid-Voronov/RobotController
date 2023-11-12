@@ -14,7 +14,6 @@ namespace RobotDemo
         [Header("Values")]
         [SerializeField] private float rotationSpeed;
         [SerializeField] private float kSoftness;
-
         private void Update()
         {
             Vector3 forwardRotationDirection = playerObjectTransform.right * input.InputDirection.x * Mathf.Sign(input.InputDirection.y);

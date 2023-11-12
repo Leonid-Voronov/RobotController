@@ -20,33 +20,30 @@ namespace RobotDemo
         [SerializeField] private float forceModifier;
 
         private Vector3 moveDirection;
-        private float leftTrackForceModifier;
-        private float rightTrackForceModifier;
-
 
         private void FixedUpdate()
         {
-            leftTrackForceModifier = 1f;
-            rightTrackForceModifier = 1f;
-
             moveDirection = orientationTransform.forward * input.InputDirection.y;
 
             float currentSpeed = groundChecker.Grounded ? groundMoveSpeed : airMoveSpeed;
             Vector3 directionAlongSurface = surfaceSlider.Project(moveDirection);
 
-            Vector3 leftWheelForce = directionAlongSurface.normalized * currentSpeed * forceModifier * leftTrackForceModifier;
-            Vector3 rightWheelForce = directionAlongSurface.normalized * currentSpeed * forceModifier * rightTrackForceModifier;
+            Vector3 leftWheelForce = directionAlongSurface.normalized * currentSpeed * forceModifier;
+            Vector3 rightWheelForce = directionAlongSurface.normalized * currentSpeed * forceModifier;
 
             rb.AddForceAtPosition(leftWheelForce, leftTrackTransform.position, ForceMode.Force);
             rb.AddForceAtPosition(rightWheelForce, rightTrackTransform.position, ForceMode.Force);
 
             SpeedControl();
 
-
             if (groundChecker.Grounded) 
             {
-                float normalizedSpeed = rb.velocity.magnitude * Vector3.Dot(rb.velocity, transform.forward) / 6;
-                trackAnimator.AnimateTracks(normalizedSpeed);
+                float normalizedSpeed = rb.velocity.magnitude * Vector3.Dot(rb.velocity, transform.forward);
+                trackAnimator.AnimateTracks(normalizedSpeed, input.InputDirection, groundMoveSpeed);
+            }
+            else
+            {
+                trackAnimator.StopAnimation();
             }
         }
 

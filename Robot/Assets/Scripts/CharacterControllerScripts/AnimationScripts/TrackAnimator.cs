@@ -4,10 +4,15 @@ namespace RobotDemo
 {
     public class TrackAnimator : MonoBehaviour
     {
+        [Header("References")]
         [SerializeField] private Animator _animator;
+        [SerializeField] private WheelRotater _wheelRotater;
+
+        [Header("Values")]
         [SerializeField] private string leftTrackSpeedParameter;
         [SerializeField] private string rightTrackSpeedParameter;
         [SerializeField] private float animationSpeedModifier;
+        
         
 
         public void AnimateTracks(float newSpeed, Vector2 inputDirection, float groundMoveSpeed)
@@ -22,6 +27,8 @@ namespace RobotDemo
                 leftTrackDirectionAddition = inputDirection.x * groundMoveSpeed * animationSpeedModifier;
                 rightTrackDirectionAddition = -inputDirection.x * groundMoveSpeed * animationSpeedModifier;
             }
+
+            _wheelRotater.AnimateWheels(newSpeed + leftTrackDirectionAddition, newSpeed + rightTrackDirectionAddition);
 
             _animator.SetFloat(leftTrackSpeedParameter, newSpeed + leftTrackDirectionAddition);
             _animator.SetFloat(rightTrackSpeedParameter, newSpeed + rightTrackDirectionAddition);
